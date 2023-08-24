@@ -1,6 +1,8 @@
 package br.com.carlos;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -76,10 +78,30 @@ public class Main {
 		if(b.equalsIgnoreCase("M")) {
 			m.add(new Pessoa(a, b.charAt(0)));
 			listaCompleta.add(m.get(m.size()-1));
+			Collections.sort(m, new Comparator<Pessoa>() {
+	            @Override
+	            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+	                return pessoa1.getNome().compareTo(pessoa2.getNome());
+	            }
+	        });
+			
 		}else if(b.equalsIgnoreCase("F")) {
 			f.add(new Pessoa(a, b.charAt(0)));
 			listaCompleta.add(f.get(f.size()-1));
+			Collections.sort(f, new Comparator<Pessoa>() {
+	            @Override
+	            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+	                return pessoa1.getNome().compareTo(pessoa2.getNome());
+	            }
+	        });
 		}
+		
+		Collections.sort(listaCompleta, new Comparator<Pessoa>() {
+            @Override
+            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
+                return pessoa1.getNome().compareTo(pessoa2.getNome());
+            }
+        });
 	}
 	
 	public static String[] nomeESexo() {

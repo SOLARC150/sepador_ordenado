@@ -16,5 +16,9 @@ public class Pessoa {
 	{
 		return "Nome: "+this.nome+" - Sexo: " + Character.toUpperCase(sexo) + "";
 	}
+
+	public String getNome() {
+		return this.nome;
+	}
 	
 }
