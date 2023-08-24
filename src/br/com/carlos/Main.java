@@ -78,30 +78,15 @@ public class Main {
 		if(b.equalsIgnoreCase("M")) {
 			m.add(new Pessoa(a, b.charAt(0)));
 			listaCompleta.add(m.get(m.size()-1));
-			Collections.sort(m, new Comparator<Pessoa>() {
-	            @Override
-	            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-	                return pessoa1.getNome().compareTo(pessoa2.getNome());
-	            }
-	        });
+			Collections.sort(m, (pessoa1, pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 			
 		}else if(b.equalsIgnoreCase("F")) {
 			f.add(new Pessoa(a, b.charAt(0)));
 			listaCompleta.add(f.get(f.size()-1));
-			Collections.sort(f, new Comparator<Pessoa>() {
-	            @Override
-	            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-	                return pessoa1.getNome().compareTo(pessoa2.getNome());
-	            }
-	        });
+			Collections.sort(f, (pessoa1, pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 		}
 		
-		Collections.sort(listaCompleta, new Comparator<Pessoa>() {
-            @Override
-            public int compare(Pessoa pessoa1, Pessoa pessoa2) {
-                return pessoa1.getNome().compareTo(pessoa2.getNome());
-            }
-        });
+		Collections.sort(listaCompleta, (pessoa1, pessoa2) -> pessoa1.getNome().compareTo(pessoa2.getNome()));
 	}
 	
 	public static String[] nomeESexo() {

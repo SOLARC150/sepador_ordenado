@@ -2,8 +2,8 @@ package br.com.carlos;
 
 public class Pessoa {
 
-	String nome;
-	Character sexo;
+	private String nome;
+	private Character sexo;
 	
 	public Pessoa(String nome, Character letra) 
 	{
